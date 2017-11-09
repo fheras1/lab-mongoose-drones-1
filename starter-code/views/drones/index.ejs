@@ -1,9 +1,31 @@
-<h2>Drones Lab</h2>
+<article id="drones">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Drones List
+      <a class="btn btn-primary pull-right" href="/drones/new">New Drone</a>
+    </h2>
+    </div>
+  </div>
+  <hr>
 
-<ul>
-  <% drones.forEach((drone) => { %>
-    <li> <%= drone.droneName %> - <%= drone.propellers %> - <%= drone.maxSpeed %></li>
+  <% drones.reverse().forEach((drone) => { %>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+      <h3 class="panel-title"><%= drone.droneName %></h3>
+    </div>
+
+    <div class="panel-body">
+      <dl>
+        <dt>Propellers</dt>
+        <dd><%= drone.propellers %></dd>
+      </dl>
+
+      <dl>
+        <dt>Max Speed</dt>
+        <dd><%= drone.maxSpeed %></dd>
+      </dl>
+    </div>
+  </div>
   <% }) %>
-</ul>
-
-<a href="/drones/new">New Drone</a>
+</article>
